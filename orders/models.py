@@ -1,7 +1,7 @@
 from django.db import models
 
 class OrderStatus(models.Model):
-    name= models.Charafield(max_length=50,unique=True)
+    name= models.CharField(max_length=50,unique=True)
 
 class Order(models.Model):
     status = models.ForeignKey(
