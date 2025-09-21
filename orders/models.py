@@ -5,3 +5,11 @@ class OrderStatus(models.Model):
 
     def __str__(self):
         return self.name
+class Order(models.Model):
+    status = models.ForeignKey(
+        'OrderStatus',
+        on_delete = models.SET_NULL,
+        null = True,
+        blank= True,
+        related_name='orders'
+    )
